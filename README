@@ -1,183 +1,183 @@
-			    BRL-CAD
-			 Release 7.38.2
+ 巴西雷亚尔-CAD
+			 版本 7.38.2
 		       http://brlcad.org/
 
-BRL-CAD is a powerful cross-platform open source combinatorial
-solid modeling system that includes an interactive 3D solid geometry
-editor, a network-distributed symmetric multiprocessing (SMP)
-high-performance ray-tracer with support for rendering and geometric
-analysis, image and signal-processing tools, a system performance
-analysis benchmark suite, a flexible geometry scripting interface,
-and a high-performance geometric representation and analysis library.
+BRL-CAD是一个强大的跨平台开源组合软件
+包含交互式 3D 实体几何的实体建模系统
+编辑器，网络分布式对称多处理（SMP）
+支持渲染和几何的高性能光线追踪器
+分析、图像和信号处理工具、系统性能
+分析基准套件、灵活的几何脚本接口、
+以及高性能的几何表示和分析库。
 
 
-TABLE OF CONTENTS
+目录
 -----------------
-  Introduction
-  Table of Contents
-  Getting Started
-  Compile and Install
-  Benchmark
-  Communication
-  Bug Reports/Feature Requests
-  Distribution Details
-  Background Information
+  介绍
+  目录
+  入门
+  编译安装
+  基准
+  沟通
+  错误报告/功能请求
+  分布详情
+  背景资料
 
 
-GETTING STARTED
----------------
+入门
+----------------
 
-This README file exists only to provide you a brief roadmap to the
-contents of the BRL-CAD distribution.
+此自述文件的存在只是为了向您提供一个简短的路线图
+BRL-CAD 发行版的内容。
 
-Some platforms have additional platform-specific documentation that
-should be consulted after reading this file:
+某些平台有额外的特定于平台的文档
+阅读此文件后应查阅：
 
-  doc/README.Windows    -- Microsoft Windows
-  doc/README.MacOSX     -- Apple Mac OS X
-  doc/README.Linux      -- Various Linux distributions
-  doc/README.*          -- Other platforms, e.g., BSD, VAX
+  doc/README.Windows——微软Windows
+  doc/README.MacOSX -- Apple Mac OS X
+  doc/README.Linux -- 各种 Linux 发行版
+  doc/README.* -- 其他平台，例如 BSD、VAX
 
-Information on how to install and run the software, to get involved
-with development, or to run the performance benchmark test suite are
-covered in detail in separate standalone documents.  For more details
-on what BRL-CAD provides, consult the main website.
+有关如何安装和运行软件以及参与的信息
+进行开发或运行性能基准测试套件
+在单独的独立文档中详细介绍。更多细节
+有关 BRL-CAD 提供的内容，请参阅主网站。
 
-Information relevant to the source code is contained in the HACKING
-(developer guide) and COPYING (legal overview) files.
+与源代码相关的信息包含在 HACKING 中
+（开发人员指南）和复制（法律概述）文件。
 
-Note that only sample geometry models are included in public
-distributions of BRL-CAD.  Detailed models are only available through
-official U.S. Gov't channels, e.g., via Advanced Joint Effectiveness
-Model (AJEM) support.
+请注意，公共仅包含示例几何模型
+BRL-CAD 的分布。详细型号只能通过
+美国政府官方渠道，例如通过高级联合效能
+模型 (AJEM) 支持。
 
 
-COMPILE AND INSTALL
+编译并安装
 -------------------
 
-In order to compile and install BRL-CAD from a source distribution,
-the latest CMake ( http://www.cmake.org ), a recent compiler, and at
-least 3GB of disk space are recommended.  More details are available
-at https://brlcad.org/wiki/Compiling
+为了从源发行版编译并安装 BRL-CAD，
+最新的 CMake ( http://www.cmake.org )，一个最新的编译器，以及
+建议至少 3GB 磁盘空间。有更多详细信息
+在https://brlcad.org/wiki/Compiling
 
-Typically, the following steps should result in a successful install:
+通常，以下步骤应该会成功安装：
 
-  tar -xvzf brlcad-VERSION.tar.gz
-  mkdir brlcad-VERSION/build
-  cd brlcad-VERSION/build
-  cmake .. -DBRLCAD_ENABLE_STRICT=OFF -DCMAKE_BUILD_TYPE=Release
-  make -j4
-  make install
+  tar -xvzf brlcad-版本.tar.gz
+  mkdir brlcad-版本/构建
+  cd brlcad-版本/构建
+  cmake .. -DBRLCAD_ENABLE_STRICT=OFF -DCMAKE_BUILD_TYPE=发布
+  使-j4
+  进行安装
 
-See the included INSTALL text file for explanation of the various
-cmake configuration options available for building BRL-CAD.
+请参阅包含的 INSTALL 文本文件以获取各种说明
+cmake 配置选项可用于构建 BRL-CAD。
 
 
-BENCHMARK
+基准
 ---------
 
-After the build successfully completes, you will be able to verify
-basic functionality by running the BRL-CAD Benchmark.  Running the
-benchmark suite is integrated into the build system such that any time
-after running CMake (in the cmake gui, configure and generate must both
-be performed) you may run:
+构建成功完成后，您将能够验证
+通过运行 BRL-CAD 基准测试来实现基本功能。运行
+基准测试套件集成到构建系统中，以便任何时候
+运行 CMake 后（在 cmake gui 中，配置和生成都必须
+被执行）你可以运行：
 
-  make benchmark
+  制定标杆
 
-If the build is successful, you will see "CORRECT" numbers and a
-performance summary at the end.  The "vgr" line effectively shows you
-approximately how much faster your machine is to a VAX 11/780.  After
-installing BRL-CAD, you may run the 'benchmark' tool as well to run
-the BRL-CAD Benchmark.
+如果构建成功，您将看到“正确”的数字和
+最后进行绩效总结。 “vgr”行有效地向您展示了
+您的机器比 VAX 11/780 大约快多少。后
+安装 BRL-CAD，您也可以运行“基准”工具来运行
+BRL-CAD 基准。
 
-See the paper in doc/benchmark.tr for information on analyzing and
-comparing the results of the benchmark tests in more detail.
+有关分析和测试的信息，请参阅 doc/benchmark.tr 中的论文
+更详细地比较基准测试的结果。
 
 
-COMMUNICATION
+沟通
 -------------
 
-There are various BRL-CAD mailing lists available including three
-developer-oriented lists, a user list, and a read-only news
-announcement list:
+有各种可用的 BRL-CAD 邮件列表，包括三个
+面向开发人员的列表、用户列表和只读新闻
+公告清单：
 
   http://sourceforge.net/mail/?group_id=105292
 
-For interactive discussion, please join our Zulip chat:
+如需互动讨论，请加入我们的 Zulip 聊天室：
 
   https://brlcad.zulipchat.com
 
 
-BUG REPORTS AND FEATURE REQUESTS
+错误报告和功能请求
 --------------------------------
 
-Please submit all bugs, support requests, and feature requests to:
+请将所有错误、支持请求和功能请求提交至：
 
   https://github.com/BRL-CAD/brlcad/issues
 
 
-DISTRIBUTION DETAILS
+分布详情
 --------------------
 
-BRL-CAD releases are available at:
+BRL-CAD 版本可在以下位置获取：
 
 https://github.com/BRL-CAD/brlcad/releases
 
-Assets stored for each release will always include source archives,
-and usually binary compilations for commonly used operating systems.
+为每个版本存储的资产将始终包括源档案，
+通常是常用操作系统的二进制编译。
 
-For developers, BRL-CAD is available via Git version control cloning:
+对于开发人员来说，BRL-CAD 可通过 Git 版本控制克隆获得：
 
 https://github.com/BRL-CAD/brlcad
 
 
-BACKGROUND INFORMATION
+背景资料
 ----------------------
 
-BRL-CAD is the primary tri-service solid modeling CAD system used by
-the U.S. military to model weapons systems for vulnerability and
-lethality analyses.  The solid modeling system is frequently used in a
-wide range of military and industrial application including in the
-design and analysis of vehicles, mechanical parts, and architecture.
-The package has also been used in radiation dose planning, medical
-visualization, computer graphics education, CSG concepts and modeling
-education, and system performance benchmark testing among other
-purposes.
+BRL-CAD 是主要的三项服务实体建模 CAD 系统
+美国军方对武器系统的脆弱性和
+致死率分析。实体建模系统经常用于
+广泛的军事和工业应用，包括
+车辆、机械零件和建筑的设计和分析。
+该软件包还用于辐射剂量规划、医疗
+可视化、计算机图形学教育、CSG 概念和建模
+教育和系统性能基准测试等
+目的。
 
-Actively developed since 1979, BRL-CAD is a collection of more than
-400 tools, utilities, and applications comprising more than a million
-lines of source code.  BRL-CAD supports a great variety of geometric
-representations including an extensive set of traditional CSG
-primitive implicit solids such as boxes, ellipsoids, cones, and tori,
-as well as explicit solids made from closed collections of Uniform
-B-Spline Surfaces, Non-Uniform Rational B-Spline (NURBS) surfaces,
-n-Manifold Geometry (NMG), and purely faceted mesh geometry.  All
-geometric objects may be combined using boolean set-theoretic CSG
-operations including union, intersection, and difference.
+BRL-CAD 自 1979 年以来一直积极开发，集合了多个
+400 个工具、实用程序和应用程序，超过一百万个
+源代码行。 BRL-CAD 支持多种几何图形
+包括一系列广泛的传统 CSG 的表示
+原始隐式实体，例如长方体、椭球体、圆锥体和圆环面，
+以及由 Uniform 的封闭集合构成的显式实体
+B 样条曲面、非均匀有理 B 样条 (NURBS) 曲面、
+n 流形几何体 (NMG) 和纯多面网格几何体。全部
+可以使用布尔集理论 CSG 组合几何对象
+运算包括并、交、差。
 
-BRL-CAD has been under active development for more than 20 years with
-a portability heritage that includes systems such as a DEC VAX-11/780
-running 4.3 BSD; DECStations running ULTRIX; Silicon Graphics 3030, 4D
-"IRIS", O2, Onyx, and Origin systems running various versions of IRIX;
-Sun Microsystems Sun-3 and Sun-4 Sparcs running SunOS; the Cray 1,
-Cray X-MP, Cray Y-MP, and Cray 2 running UNICOS; DEC Alpha AXP running
-OSF/1; Apple Macintosh II running A/UX; iPSC/860 Hypercube running
-NX/2; the Alliant FX/8, FX/80, and FX/2800; Gould/Encore SEL PowerNode
-6000/9000 and NP1; NeXT workstations; IBM RS/6000; HPPA 9000/700
-running HPUX; Ardent/Stardent; Encore Multi-Max; and much much more.
-BRL-CAD's extensive portability of course also includes a plethora of
-common desktop and server versions of BSD, IRIX, Solaris, Mac OS X,
-Linux, and Windows.
+BRL-CAD 已积极开发了 20 多年，
+便携性传统，包括 DEC VAX-11/780 等系统
+运行 4.3 BSD；运行 ULTRIX 的 DECS 站；硅图 3030，4D
+运行各种版本 IRIX 的“IRIS”、O2、Onyx 和 Origin 系统；
+Sun Microsystems Sun-3 和 Sun-4 Sparcs 运行 SunOS；克雷 1,
+运行 UNICOS 的 Cray X-MP、Cray Y-MP 和 Cray 2； DEC Alpha AXP 运行
+OSF/1；运行 A/UX 的 Apple Macintosh II； iPSC/860 超立方体运行
+NX/2； Alliant FX/8、FX/80 和 FX/2800；古尔德/Encore SEL PowerNode
+6000/9000 和 NP1； NeXT 工作站； IBM RS/6000； HPPA 9000/700
+运行 HPUX；热情/热情；安可多最大；还有更多。
+BRL-CAD 广泛的可移植性当然还包括大量
+BSD、IRIX、Solaris、Mac OS X 的常见桌面和服务器版本，
+Linux 和 Windows。
 
-The BRL-CAD package is intentionally designed to be extensively
-cross-platform and is actively developed on and maintained for many
-common operating system environments including various BSD
-distributions, Linux, Solaris, Mac OS X, and Windows.  The entire
-package is distributed in binary and source code form as free open
-source software (FOSS), provided under Open Source Initiative (OSI)
-approved license terms.  BRL-CAD was released as open source in
-December 2004. See the COPYING file for more details.
+BRL-CAD 软件包经过专门设计，可广泛用于
+跨平台，并在许多平台上积极开发和维护
+常见的操作系统环境，包括各种 BSD
+发行版、Linux、Solaris、Mac OS X 和 Windows。整个
+软件包以二进制和源代码形式免费开放
+源软件 (FOSS)，根据开源计划 (OSI) 提供
+批准的许可条款。 BRL-CAD 作为开源发布于
+2004 年 12 月。有关更多详细信息，请参阅复制文件。
 
-Best Wishes,
-The BRL-CAD Development Team
+最好的祝愿，
+BRL-CAD 开发团队
 devs@brlcad.org
